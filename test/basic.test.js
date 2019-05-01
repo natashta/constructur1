@@ -15,18 +15,18 @@ test('Создание персонажа с заданными свойства
 
 test('Сoздание персонажа неверного типа дает ошибку', () => {
   expect(() => {
-  new Character('Dragon', 'Dragon');
+    new Character('Dragon', 'Dragon');
   }).toThrow();
-  });
+});
 
 test('Создание персонажа с коротким именем дает ошибку', () => {
-    expect(() => {
+  expect(() => {
     new Character('Z', 'Daemon');
-    }).toThrow();
-    });
+  }).toThrow();
+});
 
 test('Создание персонажа с длинным именем дает ошибку', () => {
-      expect(() => {
-      new Character('Qwertyuiopasdf', 'Daemon');
-      }).toThrow();
-  });
+  expect(() => {
+    new Character('Qwertyuiopasdf', 'Daemon');
+  }).toThrow();
+});
