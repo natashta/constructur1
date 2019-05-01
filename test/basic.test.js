@@ -14,28 +14,19 @@ test('Создание персонажа с заданными свойства
 });
 
 test('Сoздание персонажа неверного типа дает ошибку', () => {
-  try {
-    const character = new Character('Dragon', 'Dragon');
-    expect(character).toBeUndefined();
-  } catch (e) {
-    expect(e).toEqual(Error('Указан неверный тип персонажа'));
-  }
-});
+  expect(() => {
+  new Character('Dragon', 'Dragon');
+  }).toThrow();
+  });
 
 test('Создание персонажа с коротким именем дает ошибку', () => {
-  try {
-    const character = new Character('Z', 'Daemon');
-    expect(character).toBeUndefined();
-  } catch (e) {
-    expect(e).toEqual(Error('Некорректно введено имя'));
-  }
-});
+    expect(() => {
+    new Character('Z', 'Daemon');
+    }).toThrow();
+    });
 
 test('Создание персонажа с длинным именем дает ошибку', () => {
-  try {
-    const character = new Character('Qwertyuiopasdf', 'Daemon');
-    expect(character).toBeUndefined();
-  } catch (e) {
-    expect(e).toEqual(Error('Некорректно введено имя'));
-  }
-});
+      expect(() => {
+      new Character('Qwertyuiopasdf', 'Daemon');
+      }).toThrow();
+  });
